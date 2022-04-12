@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.github.qsubq.a22bytetestapplication.screen.main.MainFragment"
+        android:name="com.github.qsubq.a22bytetestapplication.screen.news.NewsFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
 </navigation>

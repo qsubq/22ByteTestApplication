@@ -1,4 +1,4 @@
-package com.github.qsubq.a22bytetestapplication.screen.main
+package com.github.qsubq.a22bytetestapplication.screen.news
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.github.qsubq.a22bytetestapplication.R
 
-class MainFragment : Fragment() {
+class NewsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
