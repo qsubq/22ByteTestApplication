@@ -1,7 +1,10 @@
 package com.github.qsubq.a22bytetestapplication.screen.news
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.github.qsubq.a22bytetestapplication.databinding.ItemNewsLayoutBinding
 import com.github.qsubq.a22bytetestapplication.model.Article
@@ -18,13 +21,16 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
         return NewsViewHolder(itemBinding)
     }
 
+
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         (holder.binding).apply {
             tvTitleItem.text = newsList[position].title
             tvDescriptionItem.text = newsList[position].description
-            Picasso.get().load(newsList[position].urlToImage).into(imgItem)
-        }
 
+
+                Picasso.get().load(newsList[position].urlToImage).into(imgItem)
+
+        }
     }
 
     override fun getItemCount(): Int {
@@ -34,5 +40,13 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
     fun setNewsList(list: NewsModel){
         newsList = list.articles
         notifyDataSetChanged()
+    }
+
+    override fun onViewAttachedToWindow(holder: NewsViewHolder) {
+        super.onViewAttachedToWindow(holder)
+        holder.itemView.setOnClickListener{
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(newsList[holder.adapterPosition].url))
+            ContextCompat.startActivity(holder.itemView.context, browserIntent,null)
+        }
     }
 }

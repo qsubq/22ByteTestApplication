@@ -3,11 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment">
-
+    app:startDestination="@id/newsFragment">
     <fragment
-        android:id="@+id/mainFragment"
+        android:id="@+id/newsFragment"
         android:name="com.github.qsubq.a22bytetestapplication.screen.news.NewsFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" />
 </navigation>

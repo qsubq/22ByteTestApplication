@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_card_view"
     android:layout_width="match_parent"
-    android:layout_height="320dp"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="8dp"
     app:cardCornerRadius="15dp"
     android:layout_margin="12dp">
 
     <LinearLayout
+        android:id="@+id/linear_item_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -15,30 +17,35 @@
         <ImageView
             android:id="@+id/img_item"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="wrap_content"
             android:contentDescription="@string/img_content_desc"
-            android:src="@drawable/ic_baseline_adf_scanner_24"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop"
+            android:maxHeight="170dp"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_title_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
             android:layout_marginTop="10dp"
-            android:text="Title"
             android:textColor="@color/grey_500"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="6dp"
+            android:maxLines="3"
+            android:ellipsize="end" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_description_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
             android:layout_marginTop="8dp"
-            android:text="Desc"
             android:textColor="@color/grey_200"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
+            android:maxLines="3"
+            android:ellipsize="end"/>
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>
