@@ -13,16 +13,16 @@ import retrofit2.Response
 class NewsViewModel(application: Application) : AndroidViewModel(application) {
     private val context = application
     private val repo = Repository()
-    var newsList : MutableLiveData<Response<NewsModel>> = MutableLiveData()
+    var newsList: MutableLiveData<Response<NewsModel>> = MutableLiveData()
 
 
-    fun getNews(){
+    fun getNews() {
         viewModelScope.launch {
             newsList.value = repo.getNews()
         }
     }
 
-    fun isOnline(): Boolean{
+    fun isOnline(): Boolean {
         return NetworkHelper.isOnline(context)
     }
 }
